@@ -1,5 +1,3 @@
-#ifndef INTEGERARRAY_H
-#define INTEGERARRAY_H
 #include <cstddef>
 #include <exception>
 
