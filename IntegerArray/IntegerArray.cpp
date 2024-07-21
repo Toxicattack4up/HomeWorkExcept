@@ -75,3 +75,51 @@ void IntegerArray::remove(size_t index)
     }
     resize(size - 1); // Уменьшение размера массива
 }
+
+size_t IntegerArray::getSize() const
+{
+    return size;
+}
+
+IntegerArray::IntegerArray(const IntegerArray& other) : data(new int[other.size]), size(other.size) // Конструктор копирования
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        data[i] = other.data[i];
+    }
+}
+
+IntegerArray& IntegerArray::operator=(const IntegerArray& other) // Перегрузка оператора присваивания
+{
+    if (this == &other) return *this;
+    
+    delete[] data;
+    size = other.size;
+    data = new int [size];
+    for (size_t i = 0; i < size; i++)
+    {
+        data[i] = other.data[i];
+    }
+    
+    return *this;
+}
+
+IntegerArray::IntegerArray(IntegerArray&& other) noexcept : data(other.data), size(other.size)
+{
+    other.data = nullptr;
+    other.size = 0;
+}
+
+IntegerArray& IntegerArray::operator=(IntegerArray&& other) noexcept
+{
+    if (this == &other) return *this;
+    
+    delete[] data;
+    data = other.data;
+    size = other.size;
+
+    other.data = nullptr;
+    other.size = 0;
+
+    return *this;
+}
