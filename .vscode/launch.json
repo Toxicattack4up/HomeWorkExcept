@@ -32,8 +32,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/kuxar/OneDrive/Рабочий стол/Задания Skill Factory/HomeWorkExcept",
+      "program": "c:/Users/kuxar/OneDrive/Рабочий стол/Задания Skill Factory/HomeWorkExcept/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
